@@ -25,7 +25,6 @@ create music. The purpose of my project is **to develop a framework to draw and 
 ## Tech Stack
 
 
-
 I've used **React, p5.js and TypeScript** upto the **ECMAScript 8 (2017)** specification widely
 relying on *ES6* `classes`, `let`/`const`, `arrow functions`, `syntactical feature` from *ES8*. In the manipulation 
 of canvases generated using  *p5.js* - I required the use of
@@ -40,10 +39,7 @@ to interact with p5 sketches by wrapping it in a **React component**.
 
 In addition, for maintaining the performance of the application, many latest React features have been used:
 
-    useState()
-    useContext()
-    useEffect()
-    useRef()
+![Hooks](assets/images/hooks.png)
 
 The coding architecture followed is [`MVVM` **Model-View-ViewModel**](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) 
 for all the components. 
@@ -80,7 +76,7 @@ In **Musicblocks v3**, there is no proper canvas management system, however ther
 **[Issue]** - [Artboard Framework #58](https://github.com/sugarlabs/musicblocks-v4/issues/58). 
 
 This issue addresses the barebones and utilities for artboard framework:
-<uL>
+<ul>
     <li>This component manages one or more canvas layers, an underlay layer, and possibly an interaction layer (mouse interaction with the sprites). </li>
     <li>The Underlay layer comprises of basically just the View with a ViewModel state of the current background.</li>
     <li>There could be a Canvas manager component responsible for handling multiple Canvas layers. In it's View there could be the zoom-level, which is the same for all layers.</li>
