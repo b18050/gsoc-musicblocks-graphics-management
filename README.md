@@ -90,14 +90,29 @@ turns.
 
 In **Musicblocks v3**, there is no proper canvas management system, however there are some files especially for handling turtle. This project was to come up with a dedicated module for artboard, hence I started working on the prototype for artboard framework. This was also the most challenging phase for me, as I have to start from scratch and design a proper file structure, understand the exact requirements, variables, sub components, how all of them will be structured. As Walter said, writing your fine line of code is always hard. I had a meeting with my mentor, he clearified all my doubts and also suggested possible prototypes along the lines of MVVM. 
 
-**[Issue]** - [Artboard Framework #58](https://github.com/sugarlabs/musicblocks-v4/issues/58). 
+`This issue addresses the barebones and utilities for artboard framework`:
 
-This issue addresses the barebones and utilities for artboard framework:
-![5-points](assets/images/manager.png)
+![5-points](assets/images/manager.png) 
 
-**[Merged Pull Request]** - [Artboard Framework #71](https://github.com/sugarlabs/musicblocks-v4/pull/71)
+<table>
+    <tr>
+        <td> 🐛 Issue </td> 
+        <td> #58 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/issues/58" target="_top">Artboard Framework</a></td>
+    </tr>
+    <tr>
+        <td> 🔀 PR </td> 
+        <td> #71 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/71" target="_top">Artboard Framework PR</a></td>
+    </tr>
+    <tr>
+        <td> 🎉 Commits </td> 
+        <td> 7 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/71/commits" target="_top"> all-commits</a></td>
+    </tr>
+</table>
 
-[**[Commits](https://github.com/sugarlabs/musicblocks-v4/pull/71/commits)]** - There were total of seven commits which included adding artboard canvas with typescript support, p5 sketch in instance mode, etc.
+`There were total of seven commits which included adding artboard canvas with typescript support, p5 sketch in instance mode, etc.`
 
 ## 📝 Communication between p5 sketch and react
 
@@ -105,20 +120,25 @@ This part was partially done under the prototype, as the file structure was desi
 
 **There is one-to-one relation between artboard and turtle, i.e every artboard is associated with unique turtle.**
 
-This idea helped in generalisation for message passing to each artboard from manager easy. Kudos to **JoyKirat Singh** fellow participant for writing all the draw functions keeping this architecture in mind.
+This idea helped in *generalisation* for message passing to each artboard from manager easy. Kudos to **JoyKirat Singh** fellow participant for writing all the draw functions keeping this architecture in mind.
 
 Now anything that needs to be changed dynamically in p5 sketch can be passed as a **prop** to the sketch component and then add it as a dependency in useEffect hook for the sketch component. 
 
 ![UpdateWithProps](assets/images/update_sketch.png)
 
-Now if the value of `prop` changes, the hooks `automatically` updates itself and changes gets reflected in the p5 sketch (as it is passed as a dependency) too. Using this, a turtle can draw arcs, lines,rotate at some degree,etc with a prop passed for each function. 
+Now if the value of `prop` changes, the hooks `automatically` updates itself and changes gets reflected in the p5 sketch (as it is passed as a dependency) too. Using this, a `turtle` can draw arcs, lines,rotate at some degree,etc with a prop passed for each function. 
 
 ![](assets/images/canvas.png)
 
-This also makes possible to communicate from sketch back to the application by changing the prop value. For example, if moving turtle needs to be stopped just set the prop for movement to false, it will stop moving. This is also possible due to hooks. 
-        
-**useRef()** - For P5, we need to resort to instance mode and feed it a reference node.
-We declare a reference variable called "canvasRef" using React's useRef hook. This just let's our p5 library have a node or reference insertion point. It's important that we pass "canvasRef.current" into our DOM function because ".current" gives the actual HTML node we want. And finally, we return some jsx of a div that has the ref attribute equal to the value of our useRef hook variable. 
+This also makes possible to `communicate` from sketch back to the application by changing the prop value. For example, if moving `turtle` needs to be stopped just set the prop for movement to false, it will stop moving. This is also possible due to hooks. 
+
+<table>
+<tr>
+    <td><b>useRef()</b</td> 
+    <td>For P5, we need to resort to instance mode and feed it a reference node.
+We declare a reference variable called "canvasRef" using React's useRef hook. This just let's our p5 library have a node or reference insertion point. It's important that we pass "canvasRef.current" into our DOM function because ".current" gives the actual HTML node we want. And finally, we return some jsx of a div that has the ref attribute equal to the value of our useRef hook variable.</td>
+</tr>
+</table>      
 
 ![](assets/images/sketch.png)
 
@@ -127,9 +147,9 @@ This helps in wrapping up p5 sketch in a react component without losing unique r
 
 ## 📝 Handle multiple sketches with objects efficiently
 
-The manager component can handle multiple sketches and turtles. It generates unique ids for each artboard sketch and use it to differentiate between them while sending signals. It stores the ids in a array of list. It also establish communication between artbaord components with other components with the help of monitor component. It can add a new artboard(canvas), remove an existing artboard, renders a particular turtle to draw on artboard, etc. It receives signals from monitor component to do a change in a particular artboard. It maintains a list of artboards which are currently present in the program. 
+The `manager component` can handle multiple sketches and turtles. It generates unique ids for each artboard sketch and use it to differentiate between them while sending signals. It stores the ids in a array of list. It also establish communication between artbaord components with other components with the help of **monitor component**. It can add a new artboard(canvas), remove an existing artboard, renders a particular turtle to draw on artboard, etc. It receives `signals` from monitor component to do a change in a particular artboard. It maintains a list of artboards which are currently present in the program. 
 
-Let us see for e.g. how a particular artboard can be removed. As a matter of fact, we need to remove the artboard id and artboard object from Id list and Artboard list respectively. This logic is contained in the removeArtboard function.
+Let us see for e.g. how a particular artboard can be `removed`. As a matter of fact, we need to remove the artboard id and `artboard object` from Id list and Artboard list respectively. This logic is contained in the removeArtboard function.
 
 ![](assets/images/remove_artboard.png)
 
@@ -137,12 +157,25 @@ Then register this function with the monitor like this -
 
 ![](assets/images/monitor_remove.png)
 
-**[Issue reference ]** - [Artboard Manager Framework #78](https://github.com/sugarlabs/musicblocks-v4/issues/78)
+<table>
+    <tr>
+        <td> 🐛 Issue </td> 
+        <td> #78 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/issues/78" target="_top">Artboard Manager Framework </a></td>
+    </tr>
+    <tr>
+        <td> 🔀 PR </td> 
+        <td> #80 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/80" target="_top">Manager PR</a></td>
+    </tr>
+    <tr>
+        <td> 🎉 Commits </td> 
+        <td> 14 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/80" target="_top"> all-commits</a></td>
+    </tr>
+</table>
 
-**[Merged Pull request]** - [Manager PR #80](https://github.com/sugarlabs/musicblocks-v4/pull/80)
-
-**[Commits]** - There were total fourteen commits consisting of adding type definitions for artboards and its props, modifying sketches for turtle and artboard to recieve signal from manager, testing the artboard, refactoring, adding more variables to the model component of manager, etc. 
-<br><li>Please see all the commits [here](https://github.com/sugarlabs/musicblocks-v4/pull/80). </li>
+There were total fourteen commits consisting of adding type definitions for artboards and its props, modifying sketches for turtle and artboard to recieve signal from manager, testing the artboard, refactoring, adding more variables to the model component of manager, etc. 
 
 
 ## 📝 Integrating all dependent components together
@@ -164,7 +197,7 @@ This turtle list should be passed as a `prop` to `ArtBoardTurtle.tsx.` All the `
         <td> <a href="https://github.com/sugarlabs/musicblocks-v4/issues/83" target="_top"> Manager and Artboard Props</a></td>
     </tr>
     <tr>
-        <td> 🔀 PR** </td> 
+        <td> 🔀 PR </td> 
         <td> #87 </td>
         <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/87" target="_top">Artboard Manager and Monitor</a></td>
     </tr>
@@ -175,12 +208,19 @@ This turtle list should be passed as a `prop` to `ArtBoardTurtle.tsx.` All the `
     </tr>
 </table>
 
-
-
 There were a total of *eight* commits which include adding types and definitons for manager class in monitor, adding methods to `create`, `remove`, `update` artboards, etc.
 
 ## 🚀 Testing and Documentation
 
+The last week was reserved for testing but I used to test my code after frequently before making any PR. Also, for a side note, I used to take notes, document every point during the daily meetups. These things really helped me in writing this report. Every file has a README.md file which contains all the documentation.
+
+<table>
+    <tr>
+        <td> 🔀 PR </td> 
+        <td> #89 </td>
+        <td> <a href="https://github.com/sugarlabs/musicblocks-v4/pull/89" target="_top">Documenation for artboards</a></td>
+    </tr>
+</table>
 
 
 ## 📦 Demo
@@ -199,13 +239,19 @@ There were a total of *eight* commits which include adding types and definitons 
 
 ### ✨ Enhancements
 
+There are many enhancements that can be done particularly to artboards. Currently we heavily use props and it renders frequently which affects the performance of the application. We can use **context hook**,**Hot module**, etc
+to improve the performance. We can add features to save artworks in `png`, `svg` format.Just like `p5 wrapper` we can also put the code for art board in a separate utility. Check [here](https://github.com/Gherciu/react-p5/tree/main/src) for more details.
+
 ### 👨 Acknowledgements
 
-On a final note, I am extremely grateful to my mentors, Anindya Kundu, Walter Bender, Devin Ulibarri.I am also very thankful for their motivation which helped me in improving the quality of my code and helping me improve my soft skills.
+On a final note, I am extremely grateful to my mentors, [Anindya Kundu](https://github.com/meganindya), [Walter Bender](https://web.media.mit.edu/~walter/), [Devin Ulibarri](https://github.com/pikurasa).I am also very thankful for their motivation which helped me in improving the quality of my code and helping me improve my soft skills.
 
-I am thankful to fellow contributors fellow GSoCers Joykirat Singh, Daksh Doshi and Subham for all their guidance and for reviewing my Pull requests.
+I am thankful to my fellow GSoCers [Joykirat Singh](https://github.com/joykirat18), [[Daksh Doshi](https://github.com/daksh4469)] and [Saurabh](https://github.com/ksraj123/) for all their guidance and for reviewing my Pull requests.
 
-Thanks to Google, Sugarlabs and MusicBlocks for this great opportunity.
+Thanks to [Google](https://www.google.com/),[Sugarlabs](https://www.sugarlabs.org/) and [MusicBlocks](https://musicblocks.sugarlabs.org/) for this great opportunity.
+
+Thanks
+
 Chandan
 
 
