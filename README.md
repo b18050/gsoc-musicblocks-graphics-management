@@ -71,10 +71,11 @@ Finally, I decided to go with **p5.js**. I have chosen this library because it i
 
 </br>
 
-
 ## ✨ Work Progression
 
 During the *community bonding period* I was assigned task to come up with a prototype for handling many sketches. I started exploring many Javascript library to manage canvas so that we donot need to write functions ourselves. I decided to go with **p5.js** as it comes up with many pre-defined functions to draw, design and handling canvases without loss in performance. My mentor also advised me to use some library to fasten our development as there is no need to waste time on writing those functions which someone has already written and tested.
+
+![Cat](assests/../assets/gifs/cat.gif)
 
 This project was also dependent on the progress of other projects which are blocks refactoring, plattes and menu handling. Therefore, I progressed in small steps splitting the task across
 multiple PRs. Throughout the ten weeks of the *coding period* , my major time goes in the experimenting with canvases and their performance, adding support for typescript, integrating other compnonets with the artboard manager component.
