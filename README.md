@@ -8,7 +8,7 @@
 This is a description of my work on
 [Graphics Management](https://summerofcode.withgoogle.com/projects/#5670669326483456)
 during *Google Summer of Code 2021* with
-[Sugar Labs](https://github.com/sugarlabs/). This gist contains
+[Sugar Labs](https://github.com/sugarlabs/). This repository contains
 [links](./authored-files/), samples of my work, and
 examples.The code for artboard management and canvas generated using p5 is present in [authored files](./authored-files).
 </br>
@@ -22,7 +22,7 @@ beginners how to program, using a snap-together block-based instructions to
 create music. The purpose of my project is **to develop a framework to draw and manage graphics which will be generated JavaScript code, and how we can use modern artistic library p5.js in our project to support more complex drawings. It also aimed to extend support for more turtles without loss in performance**.
 </br>
 
-## Tech Stack
+## 📝 Tech Stack
 
 
 I've used **React, p5.js and TypeScript** upto the **ECMAScript 8 (2017)** specification widely
@@ -31,13 +31,13 @@ of canvases generated using  *p5.js* - I required the use of
 **React hooks** and **CSS**, and I used the *DOM* manipulation features of JavaScript
 to interact with p5 sketches by wrapping it in a **React component**.
 
-[React](https://reactjs.org/) is one of the most popular JavaScript libraries for creating single page applications.
+[**`React`**](https://reactjs.org/) is one of the most popular JavaScript libraries for creating single page applications.
 
-[p5.js](https://p5js.org/) is a JavaScript library with a full set of drawing functionality.
+[**`p5.js`**](https://p5js.org/) is a JavaScript library with a full set of drawing functionality.
 
-[TypeScript](https://www.typescriptlang.org/) is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
+[**`TypeScript`**](https://www.typescriptlang.org/) is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
 
-In addition, for maintaining the performance of the application, many latest React features have been used:
+In addition, for maintaining the `performance` of the application, many latest React features have been used:
 
 ![Hooks](assets/images/hooks.png)
 
@@ -45,11 +45,27 @@ The coding architecture followed is [`MVVM` **Model-View-ViewModel**](https://en
 for all the components. 
 
 In the beginning, I explored many JavaScript library for drawing complex canvas graphics using React. Some of them includes 
-        [react-konva](https://github.com/konvajs/react-konva),
-        [paper.js](http://paperjs.org/) ,
-        [fabric.js](http://fabricjs.com/) ,
-        [react-p5](https://www.npmjs.com/package/react-p5) ,
-        [react-p5-wrapper](https://www.npmjs.com/package/react-p5-wrapper).
+
+<table>
+     <th> 
+        Libraries
+    </th>
+    <tr> 
+        <td><a href="https://github.com/konvajs/react-konva" target="_top">react-konva</a></td>
+    </tr>
+    <tr> 
+        <td><a href="http://paperjs.org/" target="_top">paper.js</a></td>
+    </tr>
+    <tr> 
+        <td><a href="http://fabricjs.com/" target="_top">fabric.js</a></td>
+    </tr>
+    <tr> 
+        <td><a href="https://www.npmjs.com/package/react-p5" target="_top">react-p5</a></td>
+    </tr>
+    <tr> 
+        <td><a href="https://www.npmjs.com/package/react-p5-wrapper" target="_top">react-p5-wrapper</a></td>
+    </tr>
+</table>
 
 Finally, I decided to go with **p5.js**. I have chosen this library because it is actively maintained and documentation is really helpful. It offers feature to integrate sound with the canvas too. The graphics can be handled more easily and it is beginner friendly. Many libraries I have found are written on top of **p5.js**, so why to use a library for that. I took help from `react-p5` and `react-p5-wrapper` for typescript support and intergration of p5 sketches with react without actually using them. This was the challenging part to establish a bidirectional communication between the main React app and sketches. 
 
@@ -76,13 +92,7 @@ In **Musicblocks v3**, there is no proper canvas management system, however ther
 **[Issue]** - [Artboard Framework #58](https://github.com/sugarlabs/musicblocks-v4/issues/58). 
 
 This issue addresses the barebones and utilities for artboard framework:
-<ul>
-    <li>This component manages one or more canvas layers, an underlay layer, and possibly an interaction layer (mouse interaction with the sprites). </li>
-    <li>The Underlay layer comprises of basically just the View with a ViewModel state of the current background.</li>
-    <li>There could be a Canvas manager component responsible for handling multiple Canvas layers. In it's View there could be the zoom-level, which is the same for all layers.</li>
-    <li>Each Canvas component contains an actual HTMLCanvasElement in the View, and its Model possibly stores the vector points and other data, with actions including drawing, centering, cleaning, etc. This is the most significant component.</li>
-    <li>The interaction layer basically positions the sprites and conveys the same to the corresponding Canvas component.</li>
-</ul>
+![5-points](assets/images/manager.png)
 
 **[Merged Pull Request]** - [Artboard Framework #71](https://github.com/sugarlabs/musicblocks-v4/pull/71)
 
