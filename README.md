@@ -19,7 +19,15 @@ examples.The code for artboard management and canvas generated using p5 is prese
 
 The aim of [*Music Blocks*](https://musicblocks.sugarlabs.org/) is to teach
 beginners how to program, using a snap-together block-based instructions to
-create music. The purpose of my project is **to develop a framework to draw and manage graphics which will be generated JavaScript code, and how we can use modern artistic library p5.js in our project to support more complex drawings. It also aimed to extend support for more turtles without loss in performance**.
+create music. 
+
+The purpose of my project is 
+
+<ul>
+<li>develop a framework to draw and manage graphics which will be generated JavaScript code </li>
+<li> how we can use modern artistic library p5.js in our project to support more complex drawings</li>
+<li> It also aimed to extend support for more turtles without loss in performance</li>
+</ul>
 </br>
 
 ## 📝 Tech Stack
@@ -79,12 +87,28 @@ During the *community bonding period* I was assigned task to come up with a prot
 
 This project was also dependent on the progress of other projects which are blocks refactoring, plattes and menu handling. Therefore, I progressed in small steps splitting the task across
 multiple PRs. Throughout the ten weeks of the *coding period* , my major time goes in the experimenting with canvases and their performance, adding support for typescript, integrating other compnonets with the artboard manager component.
-
 My work, basically, consisted of five major parts:
-**Prototyping the Artbaord Framework**, **Communicating with p5 sketch back and forth**,
-**Handle multiple sketches with objects efficiently**,**Integrating all dependent components together**, and **testing if it works as expected**.
-Since, the restructuring was not possible to do linearly, I did it in multiple
-turns.
+<ol>
+    <li>  
+        Prototyping the Artbaord Framework
+    </li>
+    <li> 
+        Communicating with p5 sketch back and forth 
+    </li>
+    <li>
+         Handle multiple sketches with objects efficiently
+    </li>
+    <li>
+        Integrating all dependent components together
+    </li>
+    <li> 
+        testing if it works as expected
+    </li>
+</ol>
+
+
+`Since, the restructuring was not possible to do linearly, I did it in multiple
+turns.`
 
 ## 📝 Prototyping the Artboard Framework
 
@@ -246,7 +270,7 @@ to improve the performance. We can add features to save artworks in `png`, `svg`
 
 On a final note, I am extremely grateful to my mentors, [Anindya Kundu](https://github.com/meganindya), [Walter Bender](https://web.media.mit.edu/~walter/), [Devin Ulibarri](https://github.com/pikurasa).I am also very thankful for their motivation which helped me in improving the quality of my code and helping me improve my soft skills.
 
-I am thankful to my fellow GSoCers [Joykirat Singh](https://github.com/joykirat18), [[Daksh Doshi](https://github.com/daksh4469)] and [Saurabh](https://github.com/ksraj123/) for all their guidance and for reviewing my Pull requests.
+I am thankful to my fellow GSoCers [Joykirat Singh](https://github.com/joykirat18), [Daksh Doshi](https://github.com/daksh4469) and [Saurabh](https://github.com/ksraj123/) for all their guidance and for reviewing my Pull requests.
 
 Thanks to [Google](https://www.google.com/),[Sugarlabs](https://www.sugarlabs.org/) and [MusicBlocks](https://musicblocks.sugarlabs.org/) for this great opportunity.
 
